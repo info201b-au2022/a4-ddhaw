@@ -78,7 +78,7 @@ return(return_df)
 
 # This function ... <todo:  update comment>
 plot_jail_pop_for_us <- function()  {
-  return(ggplot(get_year_jail_pop(), aes(x = year, y = total_jail_pop)) + geom_bar(stat = "identity", position = "dodge") + scale_y_continuous(labels = label_comma()) + labs(title = "Jail Population Distribution in the US from 1970 to 2018", x = "Year", y = "Total jail population"))
+  return(ggplot(get_year_jail_pop(), aes(x = year, y = total_jail_pop)) + geom_bar(stat = "identity", position = "dodge") + scale_y_continuous(labels = label_comma()) + labs(title = "Jail Population Distribution in the US from 1970 to 2018", x = "Year", y = "Total jail population", caption = "The distribution of total Jail Population in the US from 1970 to 2018"))
 }
 
 ## Section 4  ---- 
@@ -100,7 +100,7 @@ plot_jail_pop_by_states <- function(states) {
   {
     return("Too many States")
   }
-  return(ggplot(get_jail_pop_by_states(states), aes(x = year, y = total_jail_pop, colour = state)) + geom_point(size = 0.8, alpha = 0.09)+ geom_smooth(size = 2) + theme_minimal() + labs(title = "Jail Population Distribution in the US from 1970 to 2018", x = "Year", y = "Total jail population"))
+  return(ggplot(get_jail_pop_by_states(states), aes(x = year, y = total_jail_pop, colour = state)) + geom_point(size = 0.8, alpha = 0.09)+ geom_smooth(size = 2) + theme_minimal() + labs(title = "Jail Population Distribution in the US from 1970 to 2018", x = "Year", y = "Total jail population", caption = "Comparing jailed population of certain states"))
 }
 
 # See Canvas
@@ -136,6 +136,7 @@ plot_male_pop_by_race <- function(states)
   return(barplot(x1, xlab = "Race", ylab = "Jailed population", names.arg = c("Black", "Latinx", "Native", "White"),  main = title))
 }
 
+caption <- "Largest jailed population of each race based on state."
 # See Canvas
 #----------------------------------------------------------------------------#
 
@@ -177,7 +178,7 @@ plot_pop_of_africanamerican <- function()
   return(plot_usmap(regions = "states", data = new_df, values = "black_jail_pop", color = "red") + 
            scale_fill_continuous(
              low = "white", high = "red", name = "African American Jailed Population (2018)", label = scales::comma
-           ) + theme(legend.position = "right"))
+           ) + theme(legend.position = "right") + labs(caption = "African American Jailed population in each state."))
 }
 
 # See Canvas

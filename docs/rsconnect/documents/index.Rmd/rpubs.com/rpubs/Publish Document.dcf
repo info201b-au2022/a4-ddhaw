@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/981619/f206e28efc544288a0a64671bd5f9e37
+bundleId: https://api.rpubs.com/api/v1/document/981619/f206e28efc544288a0a64671bd5f9e37
+url: http://rpubs.com/de_dhaw/981619
+when: 1670604399.04526
+lastSyncTime: 1670604399.04526

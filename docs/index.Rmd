@@ -5,45 +5,49 @@ date: '2022-11-01'
 output: html_document
 ---
 
+<!-- published on https://rpubs.com/de_dhaw/981619 -->
+
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
 source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
-## Abstract 
+## Abstract
+
 This document is a summary of the incarceration trends dataset provided by Vera Institute of Justice. The data calculated and provided builds evidence showing that people of color face inequality in the prison system compared to white Americans. It also discuss further on past laws that have led to these issues.
 
-## Introduction 
+## Introduction
+
 The Incarceration trends dataset provided by Vera Institute of Justice shows the imprisonment rates in the United States from 1970 to 2018. It shows the trends based on multiple categories and factors including, race, gender, and which county. This data relates to issues regarding racism, gender inequality, and poverty. Many individuals and communities that are impoverished are more likely to commit a crime due to financial struggles. The communities that face these challenges are often people of color as in the past, racist laws were enforced to separate these groups from white Americans. Many prison systems also known to have more groups of people of color compared to white Americans. The direct stakeholders are the Americans that are being incarcerated for committing a crime while the indirect stakeholders are those researching inequality in the prison system. The question this report will answer is whether citizens in the United States are still struggling from racist laws in the past or bias in the court and prison system.
 
-## Data Summary 
-Using the Incarceration trends dataset provided by Vera Institute of Justice I compared the trends between African Americans and White Americans from 1970 to 2018, finding the proportion of between these groups. It showed that African Americans were being incarcerated at a higher rate however has declined since about 1995. However, regarding the African American population being much lower than the white American population, this still shows inequality as the proportion is close to one, meaning the incarceration rates are similar. 
-I then found the same proportion based on state rather than time and took the most recent data. In 2018, 12 out of 50 states had a proportion larger than 1, meaning the states incarcerated African Americans more than White Americans, which shows inequality and bias still affects the African American community in many states.
-Lastly, I compared the trends between Men and Women from 1970 to 2018. Although the male and female population in the United States is very similar, individuals with the male sex (as many prisons are based on sex rather than gender) are incarcerated much more than female sex, as shown through the proportion I found.
+## Data Summary
 
+Using the Incarceration trends dataset provided by Vera Institute of Justice I compared the trends between African Americans and White Americans from 1970 to 2018, finding the proportion of between these groups. It showed that African Americans were being incarcerated at a higher rate however has declined since about 1995. However, regarding the African American population being much lower than the white American population, this still shows inequality as the proportion is close to one, meaning the incarceration rates are similar. I then found the same proportion based on state rather than time and took the most recent data. In 2018, 12 out of 50 states had a proportion larger than 1, meaning the states incarcerated African Americans more than White Americans, which shows inequality and bias still affects the African American community in many states. Lastly, I compared the trends between Men and Women from 1970 to 2018. Although the male and female population in the United States is very similar, individuals with the male sex (as many prisons are based on sex rather than gender) are incarcerated much more than female sex, as shown through the proportion I found.
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE, results=FALSE}
 plot_jail_pop_for_us()
 ```
 
 From the 1970s to the 1980s the incarceration population was very low and did not increase or decrease. However, after there was a major increase that lasted till the late 2000s and then again has remained as relatively the same population to the most current year being 2018.
 
-```{r setup, warning=FALSE, echo=FALSE}
+```{r setup, warning=FALSE, echo=FALSE, results=FALSE}
 plot_jail_pop_by_states(c("FL", "CA", "TX"))
 ```
 
 All three of the states, Florida, California, and Texas have an increased Jailed population from 1970 to 2018. The incarceration population increased steadily for all three as well. However, California had the greatest increase in population as well as greatest overall population while Texas had the lowest increase and population.
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE, results=FALSE}
 plot_male_pop_by_race("WA")
 ```
+
+<sup>`r caption`<sup>
 
 This bar chart shows four categories of race based on Race in the state of Washington. The four categories are African Americans, Latinx Americans, Native Americans, and White Americans. This shows there is a clear inequality towards Latinx individuals as they are the most incarcerated group. White Americans are the least jailed population.
 
 ### Map of the United States and African American Jailed Population in 2018
+
 ```{r echo=FALSE, warning=FALSE}
 plot_pop_of_africanamerican()
 ```
 
 Using the United States Map to visualize the population of incarcerated African Americans, shows us that the southern states, Texas, Florida, and more are shaded darker and have a larger population. In the past racist laws were firmly enforced in the south compared to northern states which were more progressive. This shows how the past still affects the African American community.
-
